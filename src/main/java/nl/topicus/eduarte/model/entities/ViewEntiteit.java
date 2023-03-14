@@ -15,13 +15,12 @@
  */
 package nl.topicus.eduarte.model.entities;
 
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.MappedSuperclass;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.MappedSuperclass;
 
-import org.hibernate.annotations.AccessType;
 import org.hibernate.annotations.Immutable;
 
 import nl.topicus.eduarte.model.entities.organisatie.IOrganisatieEntiteit;
@@ -37,7 +36,6 @@ import nl.topicus.eduarte.model.entities.organisatie.Instelling;
 public abstract class ViewEntiteit implements IOrganisatieEntiteit
 {
 	@Id
-	@AccessType("property")
 	private String id;
 
 	/**

@@ -21,21 +21,19 @@ import java.util.List;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 
 import org.hibernate.annotations.BatchSize;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.ForeignKey;
-import org.hibernate.annotations.Sort;
-import org.hibernate.annotations.SortType;
 
 import nl.topicus.eduarte.model.entities.bijlage.Bijlage;
 import nl.topicus.eduarte.model.entities.bijlage.IBijlageKoppelEntiteit;
@@ -76,7 +74,6 @@ implements ZorgvierkantObject, IBijlageKoppelEntiteit<TestBijlage> {
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "test")
 	@Cache(usage = CacheConcurrencyStrategy.READ_WRITE, region = "Instelling")
-	@Sort(type = SortType.NATURAL)
 	private SortedSet<Veldwaarde> veldwaarden = new TreeSet<>();
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "test")
